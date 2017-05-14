@@ -13,27 +13,42 @@
             width: 50px;
             text-align: end;
             padding: 10px;
+            position: relative;
+            top: -5px;
         }
         textarea {
             resize: none;
             background: #fff;
             height: 100px;
-            width: 30%;
+            width: 20%;
+            overflow: hidden;
         }
         select{
-            width: 30%;
+            width: 100%;
+            height: 20px;
+            border: 0px;
+            outline: none;
         }
         .bodyTitleClass{
             position: relative;
             top: -90px;
         }
+        .selectWrapper{
+            border-radius: 6px;
+            display: inline-block;
+            overflow: hidden;
+            border: 1px solid #cccccc;
+            width: 20%;
+        }
     </style>
     <body>
         <form id="mainForm">
             <div class="titlesClass">id:</div>
+            <div class="selectWrapper">
             <select name="userIdSelection" id="userIdSelection" autofocus >
                 <option value="" selected>Select an id</option>
             </select>
+            </div>
         </form>
     </body>
 </html>

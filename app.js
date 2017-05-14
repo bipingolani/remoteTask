@@ -46,13 +46,15 @@ function createDom(data){
             selectAreaDiv = document.createElement("div"),
             selectedDetailTextArea = document.createElement("textarea"),
             titleSpan = document.createElement('div'),
-            bodySpan = document.createElement('div');
+            bodySpan = document.createElement('div'),
+            titleSection =document.createElement('div');
         
         titleSpan.textContent = 'title:';
         titleSpan.classList = 'titlesClass';
         bodySpan.textContent = 'body:';
         bodySpan.classList = 'titlesClass bodyTitleClass';
         selectedDetailsDiv.id="selectedDetailsDiv";
+        titleSection.classList='selectWrapper';
         //selectedDetailTextArea.style ='display:block';
         selectedDetailTextArea.id = 'selectedDetailTextArea';
         valArray.forEach(function(val){
@@ -62,7 +64,8 @@ function createDom(data){
             selectTitleElement.appendChild(titleOptions);
         });
         selectedDetailsDiv.appendChild(titleSpan);
-        selectedDetailsDiv.appendChild(selectTitleElement);
+        titleSection.appendChild(selectTitleElement);
+        selectedDetailsDiv.appendChild(titleSection);
         
         if(valArray[0].userId%2==0){
             selectedDetailTextArea.value = valArray[0].body;
