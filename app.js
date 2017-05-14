@@ -43,10 +43,17 @@ function createDom(data){
         var selectTitleElement = document.createElement("select"),
             titleOptions,
             selectedDetailsDiv = document.createElement("div"),
-            selectedDetailTextArea = document.createElement("textarea");
+            selectAreaDiv = document.createElement("div"),
+            selectedDetailTextArea = document.createElement("textarea"),
+            titleSpan = document.createElement('div'),
+            bodySpan = document.createElement('div');
         
+        titleSpan.textContent = 'title:';
+        titleSpan.classList = 'titlesClass';
+        bodySpan.textContent = 'body:';
+        bodySpan.classList = 'titlesClass bodyTitleClass';
         selectedDetailsDiv.id="selectedDetailsDiv";
-        selectedDetailTextArea.style ='display:block';
+        //selectedDetailTextArea.style ='display:block';
         selectedDetailTextArea.id = 'selectedDetailTextArea';
         valArray.forEach(function(val){
             titleOptions = document.createElement("option");
@@ -54,12 +61,15 @@ function createDom(data){
             titleOptions.value = val.id;
             selectTitleElement.appendChild(titleOptions);
         });
+        selectedDetailsDiv.appendChild(titleSpan);
         selectedDetailsDiv.appendChild(selectTitleElement);
         
         if(valArray[0].userId%2==0){
             selectedDetailTextArea.value = valArray[0].body;
             selectedDetailTextArea.disabled = true;
-            selectedDetailsDiv.appendChild(selectedDetailTextArea);
+            selectAreaDiv.appendChild(bodySpan);
+            selectAreaDiv.appendChild(selectedDetailTextArea);
+            selectedDetailsDiv.appendChild(selectAreaDiv);
         }
         
         formElement.appendChild(selectedDetailsDiv);

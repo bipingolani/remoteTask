@@ -8,9 +8,29 @@
         form{
             margin:5%;
         }
+        .titlesClass{
+            display: inline-block;
+            width: 50px;
+            text-align: end;
+            padding: 10px;
+        }
+        textarea {
+            resize: none;
+            background: #fff;
+            height: 100px;
+            width: 30%;
+        }
+        select{
+            width: 30%;
+        }
+        .bodyTitleClass{
+            position: relative;
+            top: -90px;
+        }
     </style>
     <body>
         <form id="mainForm">
+            <div class="titlesClass">id:</div>
             <select name="userIdSelection" id="userIdSelection" autofocus >
                 <option value="" selected>Select an id</option>
             </select>
