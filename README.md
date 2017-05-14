@@ -1,2 +1,2 @@
-# remoteTask
-play with forms and fabric js
+In this repo ew Play with forms and fabric js
+Run Index.html 
