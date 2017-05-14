@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fabric JS</title>
+        <script type="text/javascript" src="fabricApp.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.7.11/fabric.js"></script>
+        <!--<script src="fabric.js"></script>-->
+    </head>
+    <style>
+        canvas{
+            border:1px solid grey;
+        }
+        .canvas-container{
+            margin-bottom: 20px;            
+        }
+    </style>
+    <body>
+        <button id="createRectangle" onclick="createRectangle('canvasB')">Create Rectangle</button>
+        <button id="createCircle" onclick="createCircle('canvasA')">Create Circle</button>
+        <div id="mainContainer">
+            <canvas id="canvasA"></canvas>
+            <canvas id="canvasB"></canvas>
+        </div>
+    </body>
+</html>
